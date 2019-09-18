@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 
-// import Members from './Components/Member';
+import Members from './Components/Member';
 import MemberForm from './Components/MemberForm';
 function App() {
   const [team, setTeam] = useState([{
@@ -14,7 +14,8 @@ function App() {
     <div className="App">
       <h1>Team Members</h1>
       <MemberForm/>
-      {/* <Members team={team}/> */}
+      
+      <Members team={team}/>
     </div>
   );
 }

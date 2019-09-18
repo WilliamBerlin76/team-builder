@@ -7,14 +7,18 @@ const MemberForm = props => {
         email:'',
         role:''
     })
+    const handleChange = event => {
+        setMember({...member, [event.target.name]: event.target.value})
+        console.log(member)
+    }
     return(
         <form>
             <label htmlFor="name">Name</label>
-            <input type="text" id="name" name='name'/>
+            <input type="text" id="name" name='name' onChange={handleChange} value={member.name}/>
             <label htmlFor="email">Email</label>
-            <input type="text" id="email" name="email"/>
+            <input type="text" id="email" name="email" onChange={handleChange} value={member.email}/>
             <label htmlFor="role">Role</label>
-            <input type="text" id="role" name="role"/>
+            <input type="text" id="role" name="role" onChange={handleChange} value={member.role}/>
             <button type="submit">Add Team Member :)</button>
         </form>
     )
