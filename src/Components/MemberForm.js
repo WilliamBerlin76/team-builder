@@ -9,10 +9,15 @@ const MemberForm = props => {
     })
     const handleChange = event => {
         setMember({...member, [event.target.name]: event.target.value})
-        console.log(member)
-    }
+        // console.log(member)
+    };
+    const formSubmit = event => {
+        event.preventDefault();
+        props.addNewMember(member);
+        setMember({ name: '', email: '', role: ''})
+    };
     return(
-        <form>
+        <form onSubmit={formSubmit}>
             <label htmlFor="name">Name</label>
             <input type="text" id="name" name='name' onChange={handleChange} value={member.name}/>
             <label htmlFor="email">Email</label>
